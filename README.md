@@ -4,22 +4,22 @@ Sends a free postcard a day from a monitored image folder. Run the script with a
 ## Setup
 
 You need the following folder structure in order to have a functioning script
-
-stay-posted
-|
-|---logs
-|    error.log
-|    stay-posted.log
-|
-|---images
-|    your.jpg
-|    images.jpg
-|    here.jpg
-|
-|---config
-|    user.json
+<pre>
+stay-posted  
+|  
+|---logs  
+|    error.log  
+|    stay-posted.log  
+|  
+|---images  
+|    your.jpg  
+|    images.jpg  
+|    here.jpg  
+|  
+|---config  
+|    user.json  
 |    setup.json
-
+</pre>
 ### Requirements
 All requirements are listed in the requirements.txt file
 
