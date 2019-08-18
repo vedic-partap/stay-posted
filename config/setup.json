@@ -1,0 +1,17 @@
+{
+  "sender": {
+    "prename": "",
+    "lastname": "",
+    "street": "",
+    "place": "",
+    "zip_code": 1234
+  },
+  "recipient": {
+    "prename": "",
+    "lastname": "",
+    "street": "",
+    "place": "",
+    "zip_code": 1234
+  },
+  "message": ""
+}
