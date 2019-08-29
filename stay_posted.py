@@ -72,7 +72,7 @@ for account in get_valid_account('./config/accounts.json'):
 	try:
 		with open('./images/' + image, 'rb') as my_image:
 			card = Postcard(message=image, recipient=recipient, sender=sender, picture_stream=my_image)
-			my_creator.send_free_card(postcard=card, mock_send=True, image_rotate=True)
+			my_creator.send_free_card(postcard=card, mock_send=False, image_rotate=True)
 		with open("./logs/stay-posted.log", "a+") as log:
 			log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' Post card has successfully been sent!\n')
 		os.remove('./images/' + image)
