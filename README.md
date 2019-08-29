@@ -1,5 +1,5 @@
 # stay-posted
-Sends a free postcard a day from a monitored image folder. Run the script with any scheduler every 24h. If any images are inside the images folder, they will be sent to you as a postcard within few days. 
+Sends free postcards using the PoscardCreator App from the Swiss Post. Supports multiple accounts. 
 
 ## Setup
 
