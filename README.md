@@ -5,20 +5,25 @@ Sends a free postcard a day from a monitored image folder. Run the script with a
 
 You need the following folder structure in order to have a functioning script
 <pre>
-stay-posted  
-|  
-|---logs  
-|    error.log  
-|    stay-posted.log  
-|  
-|---images  
-|    your.jpg  
-|    images.jpg  
-|    here.jpg  
-|  
-|---config  
-|    accounts.json  
-|    setup.json
+stay-posted/
+├── config
+│   ├── accounts.json
+│   └── setup.json
+├── images
+│   ├── your.png
+│   ├── images.png
+│   ├── to_be.png
+│   ├── sent.png
+│   └── sent
+│       ├── all.jpg
+│       ├── sent.jpg
+│       └── images.jpg
+├── logs
+│   ├── error.log
+│   └── stay-posted.log
+├── README.md
+├── requirements.txt
+└── stay_posted.py
 </pre>
 ### Requirements
 All requirements are listed in the requirements.txt file
