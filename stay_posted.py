@@ -78,11 +78,10 @@ if accounts:
             with open("./logs/stay-posted.log", "a+") as log:
                 log.write(datetime.now().strftime(
                     '%m/%d/%Y, %H:%M:%S') + ' Post card with image {} has successfully been sent!\n'.format(image))
-            # os.remove('./images/' + image)
             os.rename('./images/{}'.format(image), './images/sent/{}'.format(image))
         except Exception as e:
             with open("./logs/error.log", "a+") as error_log:
                 error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' ' + str(e) + '\n')
 else:
     with open("./logs/error.log", "a+") as error_log:
-                error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' {}\n'.format('No valid account found.'))
+        error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' {}\n'.format('No valid account found.'))
