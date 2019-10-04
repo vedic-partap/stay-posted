@@ -9,11 +9,11 @@ stay-posted/
 ├── config
 │   ├── accounts.json
 │   └── setup.json
+images/
 ├── images
-│   ├── your.png
-│   ├── images.png
-│   ├── to_be.png
-│   ├── sent.png
+│   ├── new
+│   │   ├── Images.jpg
+│   │   └── to_send.jpg
 │   └── sent
 │       ├── all.jpg
 │       ├── sent.jpg
