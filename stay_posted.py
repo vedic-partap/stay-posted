@@ -70,16 +70,16 @@ accounts = get_valid_account('./config/accounts.json')
 if accounts:
     for account in accounts:
         my_creator = setup_creator(account)
-        image = get_oldest_image('./images')
+        image = get_oldest_image('./images/new/')
         try:
-            with open('./images/' + image, 'rb') as my_image:
+            with open('./images/new/' + image, 'rb') as my_image:
                 card = Postcard(message=image, recipient=recipient, sender=sender, picture_stream=my_image)
                 my_creator.send_free_card(postcard=card, mock_send=False, image_rotate=True)
             with open("./logs/stay-posted.log", "a+") as log:
                 log.write(datetime.now().strftime(
                     '%m/%d/%Y, %H:%M:%S') + ' Post card with image {} has successfully been sent!\n'.format(image))
             # os.remove('./images/' + image)
-            os.rename('./images/{}'.format(image), './images/sent/{}'.format(image))
+            os.rename('./images/new/{}'.format(image), './images/sent/{}'.format(image))
         except Exception as e:
             with open("./logs/error.log", "a+") as error_log:
                 error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' ' + str(e) + '\n')
