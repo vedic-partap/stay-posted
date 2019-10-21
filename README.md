@@ -3,7 +3,8 @@ Sends free postcards using the PoscardCreator App from the Swiss Post. Supports 
 
 ## Setup
 
-You need the following folder structure in order to have a functioning script
+You need the following folder structure in order to have a functioning script.
+To achieve this structure just activate the setup.py script, add images to new and you will automatically send postcards to yourself. To adjust this just change the config/setup.json
 <pre>
 stay-posted/
 ├── config

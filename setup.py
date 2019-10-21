@@ -3,19 +3,21 @@ import json
 
 
 def get_account():
-    user: str = input('email:')
-    pwd: str = input('password')
+    user: str = input('email: ')
+    pwd: str = input('password: ')
     acc = {'user': user, 'pwd': pwd}
     return acc
 
 
 def get_setup():
-    prename: str = input("prename:")
-    lastname: str = input("lastname:")
-    street: str = input("street:")
-    place: str = input("city:")
-    zip_code: str = input("plz:")
-    setup = {'prename': prename, 'lastname': lastname, 'street': street, 'place': place, 'zip_code': zip_code}
+    prename: str = input("prename: ")
+    lastname: str = input("lastname: ")
+    street: str = input("street: ")
+    place: str = input("city: ")
+    zip_code: str = input("plz: ")
+    msg: str = input("message: ")
+    setup = {'sender': {'prename': prename, 'lastname': lastname, 'street': street, 'place': place, 'zip_code': zip_code},
+     'recipient': {'prename': prename, 'lastname': lastname, 'street': street, 'place': place, 'zip_code': zip_code}, 'message': msg}
     return setup
 
 
