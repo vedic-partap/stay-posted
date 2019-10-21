@@ -1,6 +1,0 @@
-{
-  "accounts": [
-    {"user": "user1",  "pwd": "pwd1"},
-    {"user":"user2", "pwd":"pwd2"}
-  ]
-}

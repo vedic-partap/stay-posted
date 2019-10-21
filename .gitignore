@@ -1,3 +1,7 @@
+#User Data
+images/
+logs/
+
 # Editors
 .vscode/
 .idea/
