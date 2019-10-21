@@ -5,6 +5,8 @@ from datetime import datetime
 
 from postcard_creator.postcard_creator import PostcardCreator, Token, Sender, Recipient, Postcard
 
+working_directory = os.path.dirname(os.path.abspath(__file__))
+
 
 def check_quota(_account):
     token = Token()
@@ -59,30 +61,30 @@ def get_oldest_image(path):
         files_with_date = sorted(files_with_date.items(), key=operator.itemgetter(1))
         return files_with_date[0][0]
     else:
-        with open("./logs/error.log", "a+") as error_log:
+        with open(working_directory+"/logs/error.log", "a+") as error_log:
             error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' No image found\n')
 
 
-sender_recipient = create_sender_and_recipient('./config/setup.json')
+sender_recipient = create_sender_and_recipient(working_directory+'/config/setup.json')
 sender = sender_recipient[0]
 recipient = sender_recipient[1]
-accounts = get_valid_account('./config/accounts.json')
+accounts = get_valid_account(working_directory+'/config/accounts.json')
 if accounts:
     for account in accounts:
         my_creator = setup_creator(account)
-        image = get_oldest_image('./images/new/')
+        image = get_oldest_image(working_directory+'/images/new/')
         try:
-            with open('./images/new/' + image, 'rb') as my_image:
+            with open(working_directory+'/images/new/' + image, 'rb') as my_image:
                 card = Postcard(message=image, recipient=recipient, sender=sender, picture_stream=my_image)
                 my_creator.send_free_card(postcard=card, mock_send=False, image_rotate=True)
-            with open("./logs/stay-posted.log", "a+") as log:
+            with open(working_directory+"/logs/stay-posted.log", "a+") as log:
                 log.write(datetime.now().strftime(
                     '%m/%d/%Y, %H:%M:%S') + ' Post card with image {} has successfully been sent!\n'.format(image))
 
-            os.rename('./images/new/{}'.format(image), './images/sent/{}'.format(image))
+            os.rename(working_directory+'/images/new/{}'.format(image), working_directory+'/images/sent/{}'.format(image))
         except Exception as e:
-            with open("./logs/error.log", "a+") as error_log:
+            with open(working_directory+"/logs/error.log", "a+") as error_log:
                 error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' ' + str(e) + '\n')
 else:
-    with open("./logs/error.log", "a+") as error_log:
+    with open(working_directory+"/logs/error.log", "a+") as error_log:
         error_log.write(datetime.now().strftime('%m/%d/%Y, %H:%M:%S') + ' {}\n'.format('No valid account found.'))

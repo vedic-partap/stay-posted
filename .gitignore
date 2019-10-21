@@ -123,3 +123,10 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# setup
+image/
+config/
+pyvenv.cfg
+lib64/
+.gitignore
