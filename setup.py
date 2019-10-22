@@ -28,9 +28,9 @@ def setup():
     errorlog = open('./logs/error.log', 'w+')
     stayposted = open('./logs/stay-posted.log', 'w+')
     with open('./config/accounts.json', 'w+') as outfile:
-        json.dump(get_account(), outfile)
+        json.dump(get_account(), outfile, indent=4)
     with open('./config/setup.json', 'w+') as outfile:
-        json.dump(get_setup(), outfile)
+        json.dump(get_setup(), outfile, indent=4)
 
 
 if __name__ == '__main__':
