@@ -5,9 +5,11 @@ import json
 def get_account():
     user: str = input('email: ')
     pwd: str = input('password: ')
-    acc = {'accounts':[
-        {'user': user, 'pwd': pwd}
-    ]}
+    {
+        "accounts": [
+            {"user": user,  "pwd": pwd}
+        ]
+    }
     return acc
 
 
